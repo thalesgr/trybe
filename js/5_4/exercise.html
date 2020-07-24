@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5.4 - Web Storage</title>
+   
+</head>
+
+<body>
+    <h1 class="title">Trybe Exercicio 5.4 - Web Storage</h1>
+    <div class="main-content">
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vulputate, mi ut venenatis eleifend, ipsum massa
+        accumsan nulla, non faucibus velit ante nec risus. Suspendisse mollis odio et justo dignissim varius. Nulla
+        facilisi. Aenean nulla nisi, dapibus id orci eu, faucibus commodo sem. Suspendisse nisi ligula, semper at
+        iaculis id, malesuada at nibh. Curabitur interdum ipsum id metus vestibulum tincidunt. Cras semper eu dui at
+        accumsan. Nunc at ligula sapien. Proin at augue arcu. Curabitur sit amet consectetur urna. Proin vel eros ut dui
+        dapibus scelerisque. Maecenas id ultricies nulla. Etiam facilisis iaculis sodales.
+
+        Nam consectetur libero sit amet condimentum mollis. Phasellus aliquam augue quis nibh convallis sodales. Sed ac
+        leo eros. Sed eget molestie purus. Duis mollis magna ligula, sed rutrum tellus elementum sed. Nam volutpat magna
+        id tortor viverra semper. Phasellus hendrerit, ipsum vel varius varius, felis nulla placerat dui, sed porta nisl
+        magna eget enim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        Donec at sem neque. Ut pulvinar porta sem non gravida. Integer quis libero venenatis, elementum arcu non, tempor
+        lectus. Nulla in mauris accumsan, condimentum tortor feugiat, ultrices ante. Aliquam vestibulum purus lacinia,
+        mattis arcu ac, finibus leo. Mauris non magna a nibh sollicitudin lobortis. Praesent in nisl sit amet tortor
+        luctus dignissim eu sit amet risus.
+
+        Donec imperdiet nisl leo, accumsan euismod mauris accumsan non. Cras tristique viverra fermentum. Phasellus eu
+        faucibus turpis, id lacinia ante. Sed tempus sem erat, vitae imperdiet nibh condimentum eu. Duis finibus eros
+        sagittis gravida ultrices. Nunc hendrerit neque eget leo efficitur, vitae lacinia lectus eleifend. Proin a odio
+        quam. Pellentesque sit amet neque sit amet felis mattis dapibus et quis velit. Fusce a ullamcorper lorem. Aenean
+        imperdiet id mauris ac consequat. Suspendisse vitae urna enim. Praesent iaculis, orci in pellentesque
+        pellentesque, sapien enim vestibulum purus, eget aliquam elit quam efficitur velit.
+    </div>
+    <br><br>
+    <div class="buttons">
+        <button class="background">Modo escuro</button>
+        <button class="tamanho-fonte-mais">Aumentar Fonte</button>
+        <button class="tamanho-fonte-menos">Diminuir Fonte</button>
+        <button class="spacing">Espaçar linhas</button>
+        <button class="font-family">Mudar fonte</button>
+    </div>
+    <script>
+        window.onload = () => {
+            backgroundLoad();
+            tamanhoLoad();
+            fontLoad();
+        }
+
+        function darkMode() {
+            if(document.body.style.backgroundColor != 'black'){
+            document.body.style.backgroundColor = 'black';
+            document.getElementsByClassName('main-content')[0].style.color = 'white';
+            document.getElementsByClassName('title')[0].style.color = 'white';
+            localStorage.background = 'black';
+            } else {
+            document.body.style.backgroundColor = 'white';
+            document.getElementsByClassName('main-content')[0].style.color = 'black';
+            document.getElementsByClassName('title')[0].style.color = 'black';
+            localStorage.background = 'white';
+            }
+        }
+
+        let botaoModoEscuro = document.getElementsByClassName('background')[0];
+        botaoModoEscuro.addEventListener('click', () => {
+            darkMode();
+        })
+
+        function aumentarFonte () {
+            document.getElementsByClassName('main-content')[0].style.fontSize = '25px';
+            localStorage.tamanho = 'grande'
+        }
+
+        let botaoAumentarFonte = document.getElementsByClassName('tamanho-fonte-mais')[0];
+        botaoAumentarFonte.addEventListener('click', () => {
+            aumentarFonte();
+        })
+
+        function diminuirFonte () {
+            document.getElementsByClassName('main-content')[0].style.fontSize = '12px';
+            localStorage.tamanho = 'pequeno'
+        }
+
+        let botaoDiminuirFonte = document.getElementsByClassName('tamanho-fonte-menos')[0];
+        botaoDiminuirFonte.addEventListener('click', () => {
+            diminuirFonte()
+        })
+
+        function espacarLinhas () {
+            document.getElementsByTagName('main-content')[0].style.lineHeight = '1.3em';
+        }
+
+        let botaoEspacar = document.getElementsByClassName('spacing')[0];
+        botaoEspacar.addEventListener('click', () => {
+            espacarLinhas()
+        })
+
+        function trocarFonte () {
+           document.getElementsByClassName('main-content')[0].style.fontFamily = 'sans-serif'
+           localStorage.fonte = 'sans'
+        }
+
+        let botaoFonte = document.getElementsByClassName('font-family')[0];
+        botaoFonte.addEventListener('click', () => {
+            trocarFonte()
+        })
+
+        function backgroundLoad () {
+            if(localStorage.background === 'black'){
+            document.body.style.backgroundColor = 'black';
+            document.getElementsByClassName('main-content')[0].style.color = 'white';
+            document.getElementsByClassName('title')[0].style.color = 'white'
+            } else if (localStorage.background === 'white') {
+            document.body.style.backgroundColor = 'white';
+            document.getElementsByClassName('main-content')[0].style.color = 'black';
+            document.getElementsByClassName('title')[0].style.color = 'black'
+             }
+        }
+
+        function tamanhoLoad () {
+            if (localStorage.tamanho === 'grande'){
+                document.getElementsByClassName('main-content')[0].style.fontSize = '25px';
+            } else if (localStorage.tamanho === 'pequeno') {
+                document.getElementsByClassName('main-content')[0].style.fontSize = '12px';
+            }
+        }
+
+        function fontLoad () {
+            if (localStorage.fonte === 'sans') {
+                document.getElementsByClassName('main-content')[0].style.fontFamily = 'sans-serif'
+            }
+        }
+    </script>
+</body>
+
+</html>
