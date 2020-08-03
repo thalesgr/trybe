@@ -3,36 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        input {
-            margin: 5px;
-        }
-    </style>
+    <title>Formulário</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body>
-   <form action="" id="form">
-       <fieldset>
-           Nome: <input type="text" name="name" id="name" maxlength="40" required='required'><br>
-           Email: <input type="text" name="email" id="email" maxlength="50" required='required'><br>
-           CPF: <input type="text" name="cpf" id="cpf" maxlength="11" required='required'><br>
-           Endereço: <input type="text" name="adress" id="adress" maxlength="200" required='required'><br>
-           Cidade: <input type="text" name="city" id="city" maxlength="28" required='required'><br>
+   <form action="" id="form" class="container-md">
+       <h1 class="display-4">Formulario Curriculo</h1>
+       <fieldset class="form-group">
+           Nome: <input class="form-control" type="text" name="name" id="name" maxlength="40" required='required'><br>
+           Email: <input class="form-control" type="text" name="email" id="email" maxlength="50" required='required'><br>
+           CPF: <input class="form-control" type="text" name="cpf" id="cpf" maxlength="11" required='required'><br>
+           Endereço: <input class="form-control" type="text" name="adress" id="adress" maxlength="200" required='required'><br>
+           Cidade: <input class="form-control" type="text" name="city" id="city" maxlength="28" required='required'><br>
            Estado: <select name="uf" id="uf" required='required'>
                <option value="">Selecione</option>
-           </select><br>
-           Casa: <input type="radio" name="tipo" id="tipo">
-           Apartamento: <input type="radio" name="tipo" id="tipo">
+           </select><br><br>
+           Casa: <input  type="radio" name="tipo" id="tipo">
+           Apartamento: <input  type="radio" name="tipo" id="tipo">
        </fieldset>
        <fieldset>
            Resumo do Currículo: <br><textarea name="cv" id="cv" cols="30" rows="10" maxlength="1000" required='required'></textarea><br>
-           Cargo: <input type="text" name="cargo" id="cargo" maxlength="40" required='required'><br>
-           Descrição: <input type="text" name="descricao" id="descricao" maxlength="500" required='required'><br>
-           Data de Inicio: <input type="date" name="data-inicio" id="data-inicio" required='required'>           
+           Cargo: <input class="form-control" type="text" name="cargo" id="cargo" maxlength="40" required='required'><br>
+           Descrição: <input class="form-control" type="text" name="descricao" id="descricao" maxlength="500" required='required'><br>
+           Data de Inicio: <input class="form-control" type="date" name="data-inicio" id="data-inicio" required='required'>           
        </fieldset>
        <br>
-       <button type="submit" id="enviar">Enviar</button>
-       <button type="reset">Apagar</button>
+       <button type="submit" id="enviar" class="btn btn-success">Enviar</button>
+       <button type="reset" class="btn btn-danger">Apagar</button>
        <div id="resultado"></div>
        <script src="script.js"></script>
    </form>
