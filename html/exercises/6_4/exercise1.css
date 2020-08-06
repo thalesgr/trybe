@@ -1,0 +1,39 @@
+body {
+    font-size: large;
+    margin: 5px;
+}
+h1 {
+    font-size: large;
+}
+h2 {
+    font-size: large;
+}
+
+img {
+    max-width: 100%;
+}
+
+figure {
+    margin: 15px;
+}
+@media(min-width: 800px) {
+    body {
+        background-color: cadetblue;
+        font-size: medium;
+        margin: 10px;
+    }
+    .flex {
+        display: flex;
+        flex-direction: column;
+        height: 1800px;
+        flex-wrap: wrap;
+    }
+}
+@media(min-width: 1300px) {
+    body {
+        background-color: coral;
+        font-size: x-large;
+        margin: 20px;
+        max-width: 1400px;
+    }
+}
