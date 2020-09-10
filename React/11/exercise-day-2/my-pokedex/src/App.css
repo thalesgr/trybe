@@ -1,0 +1,22 @@
+body {
+  background-image: url(https://i1.wp.com/www.portallos.com.br/wp-content/uploads/2010/03/pokemons-wallpaper.jpg?resize=1024%2C640&ssl=1);
+}
+.title {
+  background-color: white;
+  font-size: 60px;
+}
+.pokedex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pokemon {
+  margin-top: 50px;
+  border: solid red 2px;
+  padding-left: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 320px;
+  background-color: white;
+}
