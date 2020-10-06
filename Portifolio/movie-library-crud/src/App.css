@@ -1,0 +1,15 @@
+.loading {
+  position: absolute;
+  top:50%;
+  left: 40%; 
+}
+
+.loadtext {
+  font-size: xx-large;
+}
+
+.notfound {
+  font-size: xx-large;
+  margin-top: 30px;
+  margin-left: 20%;
+}
